@@ -18,7 +18,7 @@ The conservatory keeper, an elderly woman named Mrs. Chen who smelled of soil an
 She bought the orchid for forty-seven dollars and carried it home in a paper bag that grew damp from the mist that followed her through the streets. In her apartment, small and cluttered with books and half-drunk tea cups, she set it on the windowsill where the evening light could find it.
 
 That night, she dreamed in glass and petals, and when she woke, the orchid had bloomed into something she couldn't quite name.`,
-    image: "paper-texture.jpg",
+    image: "collage/painterly-scene.jpg",
   },
   {
     slug: "mirrors-in-the-afternoon",
@@ -37,7 +37,7 @@ The mirrors hung on walls painted in colors that had names like "whisper" and "r
 She died that autumn, leaving me the house and all seventeen mirrors. I sold sixteen of them. The one I kept was the smallest, the one that hung by the back door, the one that somehow always reflected the garden even when you stood directly in front of it.
 
 Sometimes, on quiet afternoons, I still see her there, tending to roses that bloom in colors that have no names.`,
-    image: "vintage-books.jpg",
+    image: "collage/vintage-portrait.jpg",
   },
   {
     slug: "wong-kar-wai-and-the-color-of-longing",
@@ -56,7 +56,7 @@ The genius is in what Wong Kar-wai leaves out. The affair they mirror is off-scr
 Michael Galasso's strings swell and break like waves. Nat King Cole croons in Spanish. The clock ticks. Rain falls on streets that shine like patent leather. And we understand that some loves exist perfectly only in the spaces between what is said and what is meant, between what happens and what almost happened.
 
 That's the color of longing—the space between.`,
-    image: "film-photo.jpg",
+    image: "collage/nightlife-scene.jpg",
   },
   {
     slug: "radiohead-kid-a-and-digital-anxiety",
@@ -75,7 +75,7 @@ Kid A predicted our current state of digital derealization better than any cultu
 "I'm not here," Yorke sings on "How to Disappear Completely," and we understand. In the age of constant connection, we've all learned how to disappear while remaining perfectly visible, present and absent at once, broadcasting our lives while feeling increasingly unreal.
 
 Kid A was ahead of its time. Unfortunately, its time has come.`,
-    image: "handwriting.jpg",
+    image: "collage/casual-candid.jpg",
   },
   {
     slug: "virginia-woolf-and-the-waves-of-consciousness",
@@ -94,7 +94,7 @@ The novel's structure mirrors life's: morning, noon, evening, night. Birth, grow
 "Against you I will fling myself, unvanquished and unyielding, O Death!" Bernard cries at the novel's end, and it's both heroic and absurd, the human consciousness asserting itself against the inevitable, making meaning in the face of the meaningless.
 
 That's what The Waves does, what all of Woolf's work does: it insists that consciousness matters, that the internal life is real and worth recording, even as everything flows and changes and eventually dissolves back into the waves.`,
-    image: "book-pages.jpg",
+    image: "collage/handwritten-journal.jpg",
   },
   {
     slug: "clarice-lispector-and-the-hour-of-the-star",
@@ -113,7 +113,7 @@ Lispector wrote this novel while dying of cancer. She knew it was her last. And 
 But in that meaningless death, in that brief hour of the star (which arrives only at the moment of death, only when Macabéa is hit by a Mercedes-Benz and lies dying in the street), Lispector finds something almost sacred. The right to exist. The right to matter, however briefly.
 
 "I write because I have nothing better to do in this world," Rodrigo says. But that's a lie. Lispector writes because she must, because even (especially) the invisible deserve to be seen, because consciousness—any consciousness—is holy.`,
-    image: "library-books.jpg",
+    image: "collage/nostalgic-objects.jpg",
   },
   {
     slug: "on-cooking-alone",
@@ -132,7 +132,7 @@ Sometimes I cook elaborate meals for myself anyway—proper stews that simmer fo
 My mother says it's sad, cooking for one. But I don't think so. I think there's something profoundly not-sad about taking care of yourself with intention, about treating your own hunger as worthy of good food, good oil, fresh herbs, the nice plates.
 
 Cooking alone taught me this: you don't need an audience to justify care. The meal matters even if no one else sees it. Maybe especially then.`,
-    image: "vintage-typewriter.jpg",
+    image: "collage/dreamy-overhead.jpg",
   },
   {
     slug: "the-library-at-night",
@@ -149,6 +149,6 @@ I found the best books that way—by accident, by wandering, by being open to th
 The library at night taught me that knowledge isn't just about directed seeking. It's also about receptivity, about being available to what you didn't know you needed to find. It's about the physical proximity to thousands of books, the strange comfort of being surrounded by more information than you could ever absorb, the humbling and exhilarating awareness of how much you'll never know.
 
 Now I live far from that library, and I do most of my reading on screens, searches targeted and efficient. But I miss the serendipity of the stacks at 2 AM, the way you could get lost and find yourself at the same time, the particular silence of a library at night when everyone there is reading for no reason other than they want to.`,
-    image: "books-stack.jpg",
+    image: "collage/forest-path.jpg",
   },
 ];

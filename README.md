@@ -174,24 +174,41 @@ When ready to migrate from local files to Google Drive:
 
 This allows non-technical editing while maintaining version control for code.
 
-## 📸 Placeholder Images
+## 📸 Collage Images
 
-The site currently uses **8 high-quality placeholder images from Unsplash** that match the scrapbook/collage aesthetic:
+The site uses **personal collage-style imagery** throughout to create the scrapbook aesthetic:
 
-- Literary imagery (book pages, vintage books, library stacks)
-- Writing tools (vintage typewriter, handwriting)
-- Film photography and paper textures
+### Current Images (`public/collage/`)
 
-**These are temporary placeholders** meant to be replaced with your own images via Google Drive when the CMS integration is complete. All images are:
-- Sourced from Unsplash (free to use)
-- Located in `public/images/`
-- Referenced in `data/works.ts` via the `image` field
-- Displayed in polaroid-style frames on cards and piece pages
+8 curated images inspired by the Pinterest "cool" board aesthetic:
+- `painterly-scene.jpg` — Atmospheric interior
+- `handwritten-journal.jpg` — Personal notes and writing
+- `vintage-portrait.jpg` — Candid photography
+- `nightlife-scene.jpg` — Urban/social moments
+- `casual-candid.jpg` — Everyday snapshots  
+- `forest-path.jpg` — Atmospheric landscapes
+- `nostalgic-objects.jpg` — Vintage ephemera
+- `dreamy-overhead.jpg` — Creative compositions
 
-To replace with your own images now:
-1. Add images to `public/images/`
-2. Update the `image` field in `data/works.ts` to reference your filename
-3. Images display best at 600x400px or similar 3:2 ratio
+**These are temporary stand-ins** sourced from Unsplash that match the Pinterest moodboard aesthetic. Replace them with your own personal photos/scans for the authentic scrapbook feel.
+
+### To Replace with Your Pinterest Images:
+
+1. **Export from Pinterest**: Save images from your boards
+2. **Add to** `public/collage/`: Drop JPG files (800x600px recommended)
+3. **Update** `data/works.ts`: Change the `image` field to your filename
+   ```typescript
+   image: "collage/your-photo.jpg"
+   ```
+4. Mix photo types: film stills, handwritten notes, candid portraits, vintage objects, atmospheric scenes
+
+### Image Guidelines:
+
+- **Format**: JPG or PNG
+- **Size**: 800x600px to 1200x800px (varies OK for collage feel)
+- **Aesthetic**: Personal, nostalgic, editorial, film-inspired
+- **Variety**: Mix portraits, objects, text, landscapes for visual interest
+- **Crops**: Different orientations and ratios add to scrapbook authenticity
 
 ## 📁 Project Structure
 
@@ -211,7 +228,8 @@ To replace with your own images now:
 ├── types/
 │   └── index.ts            # TypeScript interfaces
 └── public/
-    └── images/             # Placeholder collage images (8 from Unsplash)
+    ├── images/             # Original Unsplash literary images (8)
+    └── collage/            # Personal collage photos (Pinterest-style, 8)
 ```
 
 ## 🚀 Deployment
