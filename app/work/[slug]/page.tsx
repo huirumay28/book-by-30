@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { works } from "@/data/works";
 import { categoryLabels } from "@/types";
 
@@ -57,6 +58,22 @@ export default async function WorkPage({ params }: PageProps) {
           {/* Washi tape decoration */}
           <div className="absolute -top-4 left-20 w-32 h-7 bg-[#f4e8c1] opacity-70 rounded-sm transform -rotate-2" />
           <div className="absolute -top-4 right-24 w-24 h-7 bg-[#ffd6e8] opacity-70 rounded-sm transform rotate-3" />
+
+          {/* Polaroid-style image */}
+          {work.image && (
+            <div className="relative mb-8 bg-white p-4 shadow-md border border-[#e8dcc4]/30 mx-auto max-w-md rotate-[-1deg]">
+              <Image
+                src={`/images/${work.image}`}
+                alt={work.title}
+                width={600}
+                height={400}
+                className="w-full h-64 object-cover"
+              />
+              <div className="mt-3 text-center font-body text-sm text-[#666] italic">
+                {work.title}
+              </div>
+            </div>
+          )}
 
           {/* Category badge */}
           <div

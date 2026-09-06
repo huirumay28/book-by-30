@@ -5,6 +5,7 @@ A scrapbook-style portfolio website showcasing the writing of Huiru Huang. Featu
 ## 🎨 Features
 
 - **Scrapbook Aesthetic**: Hand-crafted collage design with rotated cards, washi tape decorations, and paper textures
+- **Polaroid-Style Images**: Each piece includes a collage photo in vintage polaroid framing
 - **4 Content Categories**: Short stories, film/music commentary, literary analysis, and essays
 - **Responsive Design**: Beautiful on all screen sizes
 - **Static Generation**: Fully pre-rendered for optimal performance

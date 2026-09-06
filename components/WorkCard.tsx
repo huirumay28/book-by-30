@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Work, categoryLabels } from "@/types";
 
 interface WorkCardProps {
@@ -58,6 +59,19 @@ export default function WorkCard({ work, index }: WorkCardProps) {
             boxShadow: "inset 0 1px 2px rgba(0,0,0,0.1)",
           }}
         />
+
+        {/* Polaroid-style image */}
+        {work.image && (
+          <div className="relative mb-4 bg-white p-2 shadow-sm">
+            <Image
+              src={`/images/${work.image}`}
+              alt={work.title}
+              width={600}
+              height={400}
+              className="w-full h-48 object-cover"
+            />
+          </div>
+        )}
 
         {/* Category tag */}
         <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${categoryColor}`}>
