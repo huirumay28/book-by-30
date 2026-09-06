@@ -23,93 +23,96 @@ export default async function WorkPage({ params }: PageProps) {
   }
 
   const categoryColor: Record<string, string> = {
-    "short-stories": "bg-[#ffd6e8] text-[#8b2e5f]",
-    "film-music": "bg-[#c8e3f5] text-[#1e4d7b]",
-    "literary-analysis": "bg-[#e8f5e8] text-[#2d5a2d]",
-    essays: "bg-[#f4e8c1] text-[#8b6914]",
+    "short-stories": "bg-[#ff1744] text-white",
+    "film-music": "bg-black text-white",
+    "literary-analysis": "bg-[#2e7d32] text-white",
+    essays: "bg-white text-black border-2 border-black",
   };
 
   return (
-    <div className="min-h-screen bg-[#faf8f5] py-12 px-4">
+    <div className="min-h-screen bg-[#ebe9e3] py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        {/* Back button */}
+        {/* Back button - editorial style */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 font-body text-[#666] hover:text-[#0a0a0a] transition-colors mb-8 group"
+          className="inline-flex items-center gap-2 font-body font-bold text-black hover:text-[#ff1744] transition-colors mb-8 group uppercase tracking-wide text-sm"
         >
           <svg
             className="w-4 h-4 group-hover:-translate-x-1 transition-transform"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            strokeWidth={3}
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
               d="M10 19l-7-7m0 0l7-7m-7 7h18"
             />
           </svg>
-          Back to all works
+          ← Index
         </Link>
 
-        {/* Main content card */}
-        <article className="relative bg-white p-8 md:p-12 shadow-lg border border-[#e8dcc4]/30 rotate-[-0.3deg]">
-          {/* Washi tape decoration */}
-          <div className="absolute -top-4 left-20 w-32 h-7 bg-[#f4e8c1] opacity-70 rounded-sm transform -rotate-2" />
-          <div className="absolute -top-4 right-24 w-24 h-7 bg-[#ffd6e8] opacity-70 rounded-sm transform rotate-3" />
+        {/* Main content card - file dossier style */}
+        <article className="relative bg-[#fafaf8] p-8 md:p-12 shadow-[8px_8px_0_rgba(0,0,0,0.2)] border-2 border-black rotate-[-0.5deg] binder-holes">
+          {/* File tabs/labels */}
+          <div className="absolute -top-4 left-20 px-4 py-1 bg-[#ff1744] text-white font-body font-bold text-xs uppercase tracking-wider rotate-[-2deg] shadow-md">
+            DOCUMENT
+          </div>
+          <div className="absolute -top-4 right-24 px-4 py-1 bg-black text-white font-body font-bold text-xs uppercase tracking-wider rotate-[3deg] shadow-md">
+            {work.slug.split("-").length} PAGES
+          </div>
 
-          {/* Polaroid-style image */}
+          {/* Polaroid-style image with bolder treatment */}
           {work.image && (
-            <div className="relative mb-8 bg-white p-4 shadow-md border border-[#e8dcc4]/30 mx-auto max-w-md rotate-[-1deg]">
+            <div className="relative mb-8 bg-white p-4 shadow-[4px_4px_0_rgba(0,0,0,1)] border-2 border-black mx-auto max-w-md rotate-[-2deg]">
               <Image
                 src={`/images/${work.image}`}
                 alt={work.title}
                 width={600}
                 height={400}
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-cover grayscale-[20%] contrast-[1.1]"
               />
-              <div className="mt-3 text-center font-body text-sm text-[#666] italic">
-                {work.title}
+              <div className="mt-3 text-center font-body text-xs font-bold uppercase tracking-wider">
+                {categoryLabels[work.category]}
               </div>
             </div>
           )}
 
-          {/* Category badge */}
+          {/* Category label - bold stamp style */}
           <div
-            className={`inline-block px-4 py-1.5 rounded-full text-sm font-body font-medium mb-6 ${
+            className={`inline-block px-4 py-2 text-xs font-bold uppercase tracking-widest mb-6 ${
               categoryColor[work.category]
             }`}
           >
             {categoryLabels[work.category]}
           </div>
 
-          {/* Title */}
-          <h1 className="font-display text-5xl md:text-6xl text-[#0a0a0a] mb-4 leading-tight">
+          {/* Title - bold editorial */}
+          <h1 className="font-display text-5xl md:text-6xl text-black mb-4 leading-tight font-bold border-b-4 border-black pb-4">
             {work.title}
           </h1>
 
-          {/* Date */}
-          <p className="font-body text-[#666] mb-8 text-lg">
-            {new Date(work.date).toLocaleDateString("en-US", {
+          {/* Date - typewriter/file stamp style */}
+          <p className="font-body text-black mb-8 text-sm uppercase tracking-wider font-bold">
+            FILE DATE: {new Date(work.date).toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
               day: "numeric",
-            })}
+            }).toUpperCase()}
           </p>
 
-          {/* Divider */}
+          {/* Divider - bold black line */}
           <div className="relative mb-8">
-            <div className="h-px bg-[#e8dcc4]" />
-            <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#c8e3f5] rotate-45" />
+            <div className="h-1 bg-black" />
           </div>
 
-          {/* Body */}
+          {/* Body - editorial column style */}
           <div className="prose prose-lg max-w-none font-body">
             {work.body.split("\n\n").map((paragraph, index) => (
               <p
                 key={index}
-                className="text-[#3a3a3a] leading-relaxed mb-6 first:text-xl"
+                className="text-black leading-relaxed mb-6 first:text-xl first:font-bold"
               >
                 {paragraph}
               </p>
@@ -126,10 +129,10 @@ export default async function WorkPage({ params }: PageProps) {
           />
         </article>
 
-        {/* More works section */}
+        {/* More works section - filing system style */}
         <div className="mt-16">
-          <h2 className="font-display text-3xl text-[#0a0a0a] mb-6 text-center">
-            More from this collection
+          <h2 className="font-display text-4xl text-black mb-6 text-center font-bold uppercase tracking-tight border-t-2 border-b-2 border-black py-4">
+            More Files
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {works
@@ -139,19 +142,19 @@ export default async function WorkPage({ params }: PageProps) {
                 <Link
                   key={relatedWork.slug}
                   href={`/work/${relatedWork.slug}`}
-                  className="group block bg-white p-5 shadow-md border border-[#e8dcc4]/30 hover:shadow-lg transition-all duration-300 rotate-[-0.5deg] hover:rotate-0 hover:scale-[1.02]"
+                  className="group block bg-[#fafaf8] p-5 shadow-[4px_4px_0_rgba(0,0,0,0.2)] border-2 border-black hover:shadow-[6px_6px_0_rgba(0,0,0,0.3)] transition-all duration-200 rotate-[-1deg] hover:rotate-0 hover:scale-[1.02]"
                 >
                   <div
-                    className={`inline-block px-3 py-1 rounded-full text-xs font-body font-medium mb-2 ${
+                    className={`inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider mb-2 ${
                       categoryColor[relatedWork.category]
                     }`}
                   >
                     {categoryLabels[relatedWork.category]}
                   </div>
-                  <h3 className="font-display text-xl text-[#0a0a0a] mb-2">
+                  <h3 className="font-display text-xl text-black mb-2 font-bold">
                     {relatedWork.title}
                   </h3>
-                  <p className="font-body text-sm text-[#666] line-clamp-2">
+                  <p className="font-body text-sm text-black line-clamp-2">
                     {relatedWork.excerpt}
                   </p>
                 </Link>

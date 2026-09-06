@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf8f5;
-  --foreground: #1a1a1a;
-  --paper-cream: #f9f7f4;
-  --paper-white: #ffffff;
-  --kraft: #e8dcc4;
-  --tape-yellow: #f4e8c1;
-  --tape-pink: #ffd6e8;
-  --tape-blue: #c8e3f5;
-  --ink-black: #0a0a0a;
-  --text-soft: #3a3a3a;
+  --background: #ebe9e3;
+  --foreground: #000000;
+  --paper-cream: #f5f3ed;
+  --paper-gray: #d9d7d2;
+  --paper-white: #fafaf8;
+  --accent-pink: #ff1744;
+  --accent-red: #d32f2f;
+  --accent-green: #2e7d32;
+  --ink-black: #000000;
+  --text-gray: #4a4a4a;
 }
 
 @theme inline {
@@ -28,6 +28,7 @@ body {
 
 h1, h2, h3, .handwritten {
   font-family: var(--font-display), cursive;
+  font-weight: 700;
 }
 
 .paper-texture {
@@ -35,19 +36,62 @@ h1, h2, h3, .handwritten {
   background-blend-mode: multiply;
 }
 
-.washi-tape {
+/* Binder holes - for file/case aesthetic */
+.binder-holes::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 20%;
+  bottom: 20%;
+  width: 8px;
+  background: 
+    radial-gradient(circle at center, transparent 50%, var(--paper-gray) 50%) 0 0 / 8px 30px,
+    radial-gradient(circle at center, #888 30%, transparent 30%) 0 0 / 8px 30px;
+  background-repeat: repeat-y;
+}
+
+/* Torn edge effect */
+.torn-edge {
+  position: relative;
+  clip-path: polygon(
+    0 2%, 3% 0, 7% 3%, 10% 1%, 14% 4%, 18% 2%, 22% 5%, 
+    26% 2%, 30% 4%, 34% 1%, 38% 3%, 42% 1%, 46% 4%,
+    50% 2%, 54% 5%, 58% 2%, 62% 4%, 66% 1%, 70% 3%,
+    74% 1%, 78% 4%, 82% 2%, 86% 5%, 90% 2%, 94% 4%,
+    97% 1%, 100% 3%, 100% 100%, 0 100%
+  );
+}
+
+/* Paper clip accent */
+.paper-clip {
   position: relative;
 }
 
-.washi-tape::before {
-  content: '';
+.paper-clip::after {
+  content: '📎';
   position: absolute;
   top: -8px;
+  right: 16px;
+  font-size: 24px;
+  transform: rotate(45deg);
+  opacity: 0.6;
+}
+
+/* Bold tape - more visible than washi */
+.bold-tape {
+  position: relative;
+}
+
+.bold-tape::before {
+  content: '';
+  position: absolute;
+  top: -10px;
   left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 20px;
-  background: var(--tape-yellow);
-  opacity: 0.7;
-  border-radius: 2px;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 100px;
+  height: 24px;
+  background: rgba(255, 23, 68, 0.15);
+  border-top: 1px solid rgba(255, 23, 68, 0.3);
+  border-bottom: 1px solid rgba(255, 23, 68, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }

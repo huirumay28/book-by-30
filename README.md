@@ -174,6 +174,25 @@ When ready to migrate from local files to Google Drive:
 
 This allows non-technical editing while maintaining version control for code.
 
+## 📸 Placeholder Images
+
+The site currently uses **8 high-quality placeholder images from Unsplash** that match the scrapbook/collage aesthetic:
+
+- Literary imagery (book pages, vintage books, library stacks)
+- Writing tools (vintage typewriter, handwriting)
+- Film photography and paper textures
+
+**These are temporary placeholders** meant to be replaced with your own images via Google Drive when the CMS integration is complete. All images are:
+- Sourced from Unsplash (free to use)
+- Located in `public/images/`
+- Referenced in `data/works.ts` via the `image` field
+- Displayed in polaroid-style frames on cards and piece pages
+
+To replace with your own images now:
+1. Add images to `public/images/`
+2. Update the `image` field in `data/works.ts` to reference your filename
+3. Images display best at 600x400px or similar 3:2 ratio
+
 ## 📁 Project Structure
 
 ```
@@ -185,14 +204,14 @@ This allows non-technical editing while maintaining version control for code.
 │   └── work/[slug]/
 │       └── page.tsx        # Individual piece pages
 ├── components/
-│   ├── WorkCard.tsx        # Scrapbook-style preview card
+│   ├── WorkCard.tsx        # Scrapbook-style preview card with polaroid images
 │   └── CategoryFilter.tsx  # Category navigation
 ├── data/
 │   └── works.ts            # Content database (temporary)
 ├── types/
 │   └── index.ts            # TypeScript interfaces
 └── public/
-    └── fonts/              # Custom fonts (when added)
+    └── images/             # Placeholder collage images (8 from Unsplash)
 ```
 
 ## 🚀 Deployment
