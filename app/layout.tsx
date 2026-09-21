@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Caveat, Dosis } from "next/font/google";
+import { Dosis } from "next/font/google";
 import "./globals.css";
-
-const caveat = Caveat({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 const dosis = Dosis({
   variable: "--font-body",
@@ -15,17 +9,14 @@ const dosis = Dosis({
 });
 
 export const metadata: Metadata = {
-  title: "Book by 30 | Huiru Huang",
-  description: "A scrapbook collage of writing by Huiru Huang — short stories, film commentary, literary analysis, and essays",
+  title: "Ru's Writing Desk",
+  description: "Personal writing discipline tool — daily logs, writing tasks, and submission tracking",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${caveat.variable} ${dosis.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${dosis.variable} h-full`}>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }
